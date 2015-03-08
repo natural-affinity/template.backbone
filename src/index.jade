@@ -1,0 +1,31 @@
+mixin ie(condition)
+  | <!--[!{condition}]>
+  block
+  | <![endif]-->
+
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="csrf-token" content="dummy.token")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no")
+    title #{name}
+    link(rel="shortcut icon" href="images/favicon.png")
+    link(rel="shortcut icon" href="images/apple-touch-icon.png")
+    link(rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,700")
+    link(rel="stylesheet" href="styles/main.min.css")
+    +ie('if lt IE 9')
+      script(src="scripts/legacy.min.js")
+
+  body
+    .container
+      #main
+
+    script(src="scripts/lib.min.js")
+    script(src="scripts/app.min.js")
+    script.
+      window.onbeforeunload = function() {
+        App.destruct(App);
+        return;
+      };

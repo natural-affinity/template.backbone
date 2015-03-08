@@ -1,0 +1,36 @@
+//boostrap (framework)
+$icon-font-path: "../../bower_components/bootstrap-sass/fonts";
+@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+
+//font-awesome (icons)
+$fa-font-path: "/fonts";
+@import "../../bower_components/font-awesome/scss/font-awesome.scss";
+
+//imports (partials)
+@import "error";
+
+//primary
+
+.container { margin-top: 8em; }
+
+.welcome-header {
+  h1 { font-size: 3em; }
+
+  kbd {
+    font-size: 2em;
+    padding: 0.25em;
+    cursor: pointer;
+  }
+
+  h4 {
+    color: #777;
+    font-size: 1.5em;
+    margin-bottom: 1em;
+  }
+}
+
+kbd.active {
+  background-color: greenyellow;
+  color: #777;
+  font-weight: bold;
+}

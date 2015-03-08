@@ -1,0 +1,43 @@
+{
+  "name": "application.name",
+  "version": "0.0.1",
+  "homepage": "https://github.com/natural-affinity/repo.name",
+  "description": "application.description",
+  "author": {
+    "name": "Rizwan Tejpar",
+    "email": "rtejpar@rtcodespark.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/natural-affinity/repo.name.git"
+  },
+  "bugs": {
+    "url": "https://github.com/natural-affinity/repo.name/issues"
+  },
+  "private": true,
+  "keywords": [
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-autoprefixer": ">=0.7.2",
+    "grunt-contrib-clean": ">=0.5.0",
+    "grunt-contrib-connect": ">=0.8.0",
+    "grunt-contrib-copy": ">=0.7.0",
+    "grunt-contrib-handlebars": "^0.9.2",
+    "grunt-contrib-jade": ">=0.14.0",
+    "grunt-contrib-jshint": ">=0.10.0",
+    "grunt-contrib-sass": ">=0.8.1",
+    "grunt-contrib-uglify": ">=0.7.0",
+    "grunt-contrib-watch": ">=0.6.1",
+    "grunt-notify": ">=0.4.1",
+    "grunt-regex-replace": ">=0.2.6",
+    "jshint-stylish": ">=1.0.0",
+    "load-grunt-tasks": ">=2.0.0",
+    "time-grunt": ">=1.0.0"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "license": "MIT"
+}

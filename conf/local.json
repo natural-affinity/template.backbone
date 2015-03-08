@@ -1,0 +1,5 @@
+{
+  "name": "template.application",
+  "namespace": "App",
+  "api": "http://localhost:5000/api"
+}
