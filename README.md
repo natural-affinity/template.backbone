@@ -1,7 +1,7 @@
 template.backbone
 =================
 
-Series of templates for bootstrapping a front-end development process.
+Template for bootstrapping a backbone-based front-end development process.
 
 Prerequisites
 -------------
@@ -79,3 +79,12 @@ Directory Structure
         |-- handlebars (handlebars helpers)
         |-- templates (handlebars templates)
 </pre>
+
+Future Considerations
+---------------------
+* [ ] Add Test Framework Integration
+* [ ] Yeoman-based Generator
+
+License
+-------
+Released under the MIT License.  See the LICENSE file for further details.
