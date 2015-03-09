@@ -44,12 +44,12 @@ The `grunt serve` (watch, livereload) loop is designed to accelerate development
 $ grunt serve:dev
 ```
 
-Alternatively, to simply run the application in standalone-mode, invoke the following:
+Alternatively, to simply run the application in standalone-mode, invoke:
 ```bash
 $ grunt serve
 ```
 
-Environment-based config parameters are stored in `conf`, to switch between them invoke the following:
+Environment-based parameters are stored in `conf`, to switch between them invoke:
 ```bash
 $ grunt --env=conf\dev.json serve
 ```
