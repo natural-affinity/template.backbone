@@ -1,7 +1,7 @@
 template.backbone
 =================
 
-Template for bootstrapping a backbone-based front-end development process.
+Template for bootstrapping a backbone.js application development process.
 
 Prerequisites
 -------------
