@@ -45,12 +45,12 @@ $ grunt serve:dev
 ```
 
 Alternatively, to simply run the application in standalone-mode, invoke the following:
-``bash
+```bash
 $ grunt serve
 ```
 
 Environment-based config parameters are stored in `conf`, to switch between them invoke the following:
-``bash
+```bash
 $ grunt --env=conf\dev.json serve
 ```
 
