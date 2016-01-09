@@ -1,7 +1,9 @@
 .tmp
+.grunt
 .scratch
 .sass-cache
 .DS_Store
 dist
+test
 node_modules
 bower_components

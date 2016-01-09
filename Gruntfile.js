@@ -14,6 +14,14 @@ module.exports = function(grunt) {
     staging: {
       root: '.tmp'
     },
+    spec: {
+      root: 'spec',
+      scripts: 'spec/scripts'
+    },
+    test: {
+      root: 'test',
+      scripts: 'test/scripts'
+    },
     dist: {
       root: 'dist',
       fonts: 'dist/fonts',
@@ -29,7 +37,20 @@ module.exports = function(grunt) {
     pretty: grunt.option('pretty') || true,
     gconf: gconf,
     clean: {
-      dist: ['<%= gconf.staging.root %>', '<%= gconf.dist.root %>']
+      dist: ['<%= gconf.staging.root %>', '<%= gconf.test.root %>', '<%= gconf.dist.root %>']
+    },
+    coffee: {
+      test: {
+        files: {
+          '<%= gconf.test.scripts %>/app.spec.js': ['<%= gconf.spec.scripts %>/**/*.coffee']
+        }
+      }
+    },
+    coffeelint: {
+      options: {
+        configFile: 'coffeelint.json'
+      },
+      test: ['<%= gconf.spec.scripts %>/**/*.coffee']
     },
     copy: {
       fonts: {
@@ -152,6 +173,15 @@ module.exports = function(grunt) {
         }
       }
     },
+    jasmine: {
+      test: {
+        options: {
+          specs: '<%= gconf.test.scripts %>/app.spec.js',
+          vendor: '<%= gconf.dist.scripts %>/lib.min.js'
+        },
+        src: '<%= gconf.dist.scripts %>/app.min.js'
+      }
+    },
     'regex-replace': {
       endpoints: {
         src: ['<%= gconf.dist.root %>/index.html %>', '<%= gconf.dist.scripts %>/app.min.js'],
@@ -182,7 +212,7 @@ module.exports = function(grunt) {
     watch: {
       gruntfile: {
         files: ['Gruntfile.js'],
-        tasks: ['js', 'replace']
+        tasks: ['js', 'replace', 'co', 'jasmine']
       },
       jade: {
         files: ['<%= gconf.src.root %>/*.jade'],
@@ -197,7 +227,14 @@ module.exports = function(grunt) {
       },
       js: {
         files: ['<%= gconf.src.scripts %>/**/*.js'],
-        tasks: ['handlebars', 'js', 'replace'],
+        tasks: ['handlebars', 'js', 'replace', 'jasmine'],
+        options: {
+          livereload: true
+        }
+      },
+      coffee: {
+        files: ['<%= gconf.spec.scripts %>/**/*.coffee'],
+        tasks: ['co', 'jasmine'],
         options: {
           livereload: true
         }
@@ -227,6 +264,7 @@ module.exports = function(grunt) {
     ]);
   });
 
+  grunt.registerTask('co', ['coffeelint', 'coffee']);
   grunt.registerTask('js', ['jshint', 'uglify']);
   grunt.registerTask('css', ['sass', 'postcss']);
   grunt.registerTask('replace', ['regex-replace']);

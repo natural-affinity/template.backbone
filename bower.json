@@ -12,5 +12,7 @@
     "html5shiv": ">=3.7.2",
     "polyfills-pkg": ">=0.1.2"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "jasmine": "~2.4.1"
+  }
 }
