@@ -6,7 +6,7 @@ Template to bootstrap the backbone.js application development process.
 Prerequisites
 -------------
 * Node.js (v0.10.x)
-* Ruby (2.0.0 x64)
+* Ruby (2.2.2 x64)
 * Ruby Devkit (Windows-only)
 * Livereload (Browser Plugin)
 
@@ -63,6 +63,9 @@ Directory Structure
 |-- Gruntfile.js: all grunt build, deploy, compile, serve tasks
 |-- conf: environment-specific configuration settings
 |-- dist: deployment-ready application assets
+|-- test: test-ready assets
+|-- spec: all component test code
+    |-- scripts (coffeescript assets)
 |-- src: application source code
     |-- index.jade
     |-- images (image assets)
@@ -82,8 +85,8 @@ Directory Structure
 
 Future Considerations
 ---------------------
-* [ ] Add Test Framework Integration
-* [ ] Yeoman-based Generator
+* [ ] Bootstrap Material Theme
+* [ ] Replace Grunt with Gulp
 
 License
 -------
