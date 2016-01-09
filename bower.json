@@ -2,12 +2,12 @@
   "name": "application.name",
   "private": true,
   "dependencies": {
-    "jquery": "^1.11.2",
-    "backbone": "^1.1.2",
-    "underscore": "~1.7.0",
-    "handlebars": "^2.0.0",
-    "font-awesome": ">=4.3.0",
-    "bootstrap-sass-official": "^3.3.3",
+    "jquery": "^1.12.0",
+    "backbone": "^1.2.3",
+    "underscore": "~1.8.3",
+    "handlebars": "^4.0.5",
+    "font-awesome": ">=4.5.0",
+    "bootstrap-sass-official": "^3.3.6",
     "respond": ">=1.4.2",
     "html5shiv": ">=3.7.2",
     "polyfills-pkg": ">=0.1.2"

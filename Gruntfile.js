@@ -59,9 +59,11 @@ module.exports = function(grunt) {
         dest: '<%= gconf.staging.root %>/main.min.css'
       }
     },
-    autoprefixer: {
+    postcss: {
       options: {
-        browsers: ['last 2 versions', 'ie 8', 'ie 9']
+        processors: [
+          require('autoprefixer')({browsers: ['last 2 versions', 'ie 8', 'ie 9']})
+        ]
       },
       dist: {
         src: '<%= gconf.staging.root %>/main.min.css',
@@ -167,11 +169,7 @@ module.exports = function(grunt) {
         livereload: 35729,
         hostname: 'localhost',
         open: 'http://<%= connect.options.hostname %>:<%= connect.options.port %>',
-        middleware: function(connect) {
-          return [
-            connect.static(gconf.dist.root)
-          ];
-        }
+        base: '<%= gconf.dist.root %>'
       },
       dev: {},
       dist: {
@@ -230,7 +228,7 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('js', ['jshint', 'uglify']);
-  grunt.registerTask('css', ['sass', 'autoprefixer']);
+  grunt.registerTask('css', ['sass', 'postcss']);
   grunt.registerTask('replace', ['regex-replace']);
   grunt.registerTask('build', ['clean', 'copy', 'css', 'handlebars', 'js', 'jade', 'replace']);
   grunt.registerTask('default', ['build']);
